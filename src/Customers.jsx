@@ -1,7 +1,7 @@
 const Customer = () => {
     return(
         <>
-
+            
         </>
     )
 }
@@ -9,3 +9,5 @@ const Customer = () => {
 function Customers(){
 
 }
+
+export default Customers

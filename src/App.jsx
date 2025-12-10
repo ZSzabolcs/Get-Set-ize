@@ -4,6 +4,12 @@ import Customers from './Customers'; // Feltöltve
 import Products from './Products'; // Placeholder komponens
 import Cart from './Cart'; // Placeholder komponens
 
+function Test(){
+  return (
+    <h1>Test</h1>
+  )
+}
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +24,7 @@ function App() {
       <main style={{ padding: '20px' }}>
         {/* Útvonalak definiálása */}
         <Routes>
-          <Route path="/" element={<h1>Üdvözöljük a Webáruház Admin Felületén!</h1>} />
+          <Route path="/" element={<Test></Test>} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
