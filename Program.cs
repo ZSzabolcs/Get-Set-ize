@@ -13,7 +13,7 @@ builder.Services.AddCors(options =>{
             .AllowAnyHeader()
             .AllowAnyMethod();
         }
-    )
+    );
 });
 
 builder.Services.AddControllers()
@@ -49,4 +49,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 
