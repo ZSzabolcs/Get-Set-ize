@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { Routes, Route, Link } from 'react-router-dom'; // Importálva
+import Customers from './Customers'; // Feltöltve
+import Products from './Products'; // Placeholder komponens
+import Cart from './Cart'; // Placeholder komponens
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      {/* Navigációs sáv a Link komponensekkel */}
+      <nav style={{ padding: '10px', borderBottom: '2px solid #333', backgroundColor: '#f4f4f4' }}>
+        <Link to="/" style={{ margin: '0 15px', textDecoration: 'none', fontWeight: 'bold' }}>Kezdőlap</Link>
+        <Link to="/customers" style={{ margin: '0 15px', textDecoration: 'none', fontWeight: 'bold' }}>Vevők</Link>
+        <Link to="/products" style={{ margin: '0 15px', textDecoration: 'none', fontWeight: 'bold' }}>Termékek</Link>
+        <Link to="/cart" style={{ margin: '0 15px', textDecoration: 'none', fontWeight: 'bold' }}>Kosár</Link>
+      </nav>
+
+      <main style={{ padding: '20px' }}>
+        {/* Útvonalak definiálása */}
+        <Routes>
+          <Route path="/" element={<h1>Üdvözöljük a Webáruház Admin Felületén!</h1>} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
